@@ -1,26 +1,14 @@
-# Factorial function
-def factorial(n):
-    if n < 0:
-        return "Factorial not defined for negative numbers"
-    
-    result = 1
-    for i in range(1, n+1):
-        result *= i
-    return result
-
-
-# Main program
 try:
-    # Factorial
-    num = int(input("Enter a number to find factorial: "))
-    print("Factorial =", factorial(num))
+    # Factorial using loop
+    n = int(input("Enter a number to find factorial: "))
+    fact = 1 if n >= 0 else "Factorial not defined for negative numbers"
+    for i in range(1, n+1):
+        fact *= i
+    print("Factorial =", fact)
 
-    # Lambda for even numbers
-    numbers = list(map(int, input("\nEnter numbers separated by space: ").split()))
-
-    even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
-
-    print("Even numbers:", even_numbers)
+    # Even numbers using lambda
+    nums = list(map(int, input("\nEnter numbers separated by space: ").split()))
+    print("Even numbers:", list(filter(lambda x: x % 2 == 0, nums)))
 
 except ValueError:
     print("Invalid input! Please enter integers only.")
