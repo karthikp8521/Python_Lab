@@ -1,37 +1,27 @@
-# Accept two numbers
-a = input("Enter first number: ")
-b = input("Enter second number: ")
-
-# Type conversion
-num1 = float(a)
-num2 = float(b)
+# Take input and convert directly to float
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
 
 print("\n--- Arithmetic Operations ---")
 print("Addition:", num1 + num2)
 print("Subtraction:", num1 - num2)
 print("Multiplication:", num1 * num2)
-print("Division:", num1 / num2)
+print("Division:", num1 / num2 if num2 != 0 else "Cannot divide by zero")
 
-# Show data types
 print("\n--- Data Types ---")
-print("Type of num1:", type(num1))
-print("Type of num2:", type(num2))
+print(type(num1), type(num2))
 
-# Type conversion demo
-int_num1 = int(num1)
-str_num2 = str(num2)
-
+# Type conversion
 print("\n--- Type Conversion ---")
-print("Integer value:", int_num1, "Type:", type(int_num1))
-print("String value:", str_num2, "Type:", type(str_num2))
+print("Integer value:", int(num1))
+print("String value:", str(num2))
 
-# Memory management
+# Memory address
 print("\n--- Memory Address ---")
 print("Address of num1:", id(num1))
-print("Address of num2:", id(num2))
 
 # Reassign variable
-num1 = num1 + 5
+num1 += 5
 print("\nAfter modification:")
 print("New value:", num1)
 print("New address:", id(num1))
